@@ -11,6 +11,7 @@ RUN dotnet restore
 
 # Copy everything else and build
 #COPY . ./
+#mazafak
 RUN dotnet publish -c Release -o out
 
 #ENTRYPOINT ["dotnet", "aspnetapp.dll"]
