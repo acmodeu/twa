@@ -19,5 +19,5 @@ FROM microsoft/dotnet:aspnetcore-runtime
 WORKDIR /app
 COPY --from=build-env /app/out .
 
-ENTRYPOINT ["dotnet", "aspnetapp.dll"]
-#ENTRYPOINT [ "/bin/sh" ]
+#ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+ENTRYPOINT [ "/bin/sh" ]
