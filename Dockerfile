@@ -11,8 +11,13 @@ RUN dotnet restore
 
 # Copy everything else and build
 #COPY . ./
-#mazafak
+
 RUN dotnet publish -c Release -o out
 
-#ENTRYPOINT ["dotnet", "aspnetapp.dll"]
-ENTRYPOINT [ "/bin/sh" ]
+# Build runtime image
+FROM microsoft/dotnet:aspnetcore-runtime
+WORKDIR /app
+COPY --from=build-env /app/out .
+
+ENTRYPOINT ["dotnet", "aspnetapp.dll"]
+#ENTRYPOINT [ "/bin/sh" ]
