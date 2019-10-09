@@ -1,4 +1,5 @@
-FROM microsoft/dotnet:sdk AS build-env
+#FROM microsoft/dotnet:sdk AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
 
 MAINTAINER acmodeu <acmodeu@gmail.com>
 
