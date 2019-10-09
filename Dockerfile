@@ -6,7 +6,7 @@ MAINTAINER acmodeu <acmodeu@gmail.com>
 WORKDIR /app
 
 # Copy csproj and restore as distinct layers
-RUN git clone -b '0.0.2-alfa' --single-branch https://github.com/kaanlab/PetrpkuWeb.git .
+RUN git clone -b '0.0.2-alfa' https://github.com/kaanlab/PetrpkuWeb.git .
 #COPY *.csproj ./
 RUN dotnet restore
 
