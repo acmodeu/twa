@@ -22,7 +22,7 @@ RUN dotnet publish -c Release -o out
 #FROM microsoft/dotnet:aspnetcore-runtime
 FROM mcr.microsoft.com/dotnet/core/runtime:3.0 AS runtime
 WORKDIR /app
-COPY --from=build-env /app/out .
+COPY --from=build /app/out .
 
 ENTRYPOINT ["dotnet", "PetrpkuWeb.dll"]
 #ENTRYPOINT [ "/bin/sh" ]
