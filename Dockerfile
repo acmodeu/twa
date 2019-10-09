@@ -5,6 +5,9 @@ MAINTAINER acmodeu <acmodeu@gmail.com>
 
 WORKDIR /app
 
+RUN git config --global user.name "acmodeu"
+RUN git config --global user.email "acmodeu@gmail.com"
+
 # Copy csproj and restore as distinct layers
 RUN git clone -b '0.0.2-alfa' https://github.com/kaanlab/PetrpkuWeb.git .
 #COPY *.csproj ./
