@@ -1,12 +1,12 @@
 #FROM microsoft/dotnet:sdk AS build-env
-FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
-
+#FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build-env
+FROM mcr.microsoft.com/dotnet/core/sdk:3.0 AS build
 MAINTAINER acmodeu <acmodeu@gmail.com>
 
 WORKDIR /app
 
-RUN git config --global user.name "acmodeu"
-RUN git config --global user.email "acmodeu@gmail.com"
+#RUN git config --global user.name "acmodeu"
+#RUN git config --global user.email "acmodeu@gmail.com"
 
 # Copy csproj and restore as distinct layers
 RUN git clone --single-branch -b '0.0.2-alfa' https://github.com/kaanlab/PetrpkuWeb.git .
